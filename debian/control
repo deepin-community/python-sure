@@ -1,15 +1,34 @@
-Source: template-repository
-Section: unknown
+Source: python-sure
+Section: python
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
+Maintainer: Debian OpenStack <team+openstack@tracker.debian.org>
+Uploaders:
+ Thomas Goirand <zigo@debian.org>,
+Build-Depends:
+ debhelper-compat (= 11),
+ dh-python,
+ openstack-pkg-tools,
+ python3-all,
+ python3-mock,
+ python3-nose,
+ python3-rednose,
+ python3-setuptools,
+ python3-six,
 Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Vcs-Browser: https://salsa.debian.org/openstack-team/python/python-sure
+Vcs-Git: https://salsa.debian.org/openstack-team/python/python-sure.git
+Homepage: https://github.com/gabrielfalcao/sure
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: python3-sure
+Architecture: all
+Depends:
+ python3-nose,
+ python3-rednose,
+ python3-six,
+ ${misc:Depends},
+ ${python3:Depends},
+Description: utility belt for automated testing
+ Sure is a library for Python that leverages a DSL for writing assertions. In
+ CPython it monkey-patches the object type, adding some methods and properties
+ purely for test purposes. Any Python code written after "import sure" gains
+ testing superpowers.
