@@ -1,0 +1,20 @@
+# python bytecode
+*.pyc
+__pycache__
+
+# pip and setuptools
+docs/_build
+build/
+dist/
+*.egg-info/
+sure-*.tar.gz
+
+# temporary test files and dirs
+.coverage
+.tox
+
+# temporary editor files
+*.sublime-project
+*.sublime-workspace
+*.swp
+.venv/

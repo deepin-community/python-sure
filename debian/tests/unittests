@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+set -x
+
+CWD=$(pwd)
+PYTHON3S=$(py3versions -vs)
+for i in ${PYTHON3S} ; do
+	python${i} setup.py install --install-layout=deb --root ${CWD}/debian/tmp
+	PYTHONPATH=${CWD}/debian/tmp/usr/lib/python3/dist-packages \
+		http_proxy=127.0.0.1:9 https_proxy=127.0.0.9:9 \
+		HTTP_PROXY=127.0.0.1:9 HTTPS_PROXY=127.0.0.1:9 \
+		PYTHON=python${i} python${i} -m nose -v --exclude='.*test_context_is_not_optional.*'
+done

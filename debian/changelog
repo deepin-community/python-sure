@@ -1,5 +1,108 @@
-template-repository (1.0-1) unstable; urgency=medium
+python-sure (2.0.0-3) unstable; urgency=medium
 
-  * Initial release
+  * Added extend-diff-ignore for the egg-info (Closes: #1046255).
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Thomas Goirand <zigo@debian.org>  Thu, 17 Aug 2023 17:38:25 +0200
+
+python-sure (2.0.0-2) unstable; urgency=medium
+
+  * d/rules: add dh_python3 --shebang=/usr/bin/python3 (Closes: #1016380).
+  * Add autopkgtest.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 31 Jul 2022 12:53:24 +0200
+
+python-sure (2.0.0-1) unstable; urgency=medium
+
+  * New upstream release:
+    - unbreak python-httpretty FTBFS (Closes: #1002321).
+    - Fix FTBFS (Closes: #1002433).
+  * Remove all patches, not relevant anymore.
+  * Add python3-mock build-depends.
+  * Skip test_context_is_not_optional() test that is broken.
+  * Fix long and sort description to not include Python version.
+  * Switch to debhelper-compat = 11.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 22 Dec 2021 09:39:17 +0100
+
+python-sure (1.2.5-6) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Use team+openstack@tracker.debian.org as maintainer
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Thomas Goirand ]
+  * Removed Python 2 support (Closes: #938205).
+  * Fix d/copyright ordering and years.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 13 Sep 2019 12:34:52 +0200
+
+python-sure (1.2.5-5) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/watch: Use https protocol
+  * Fixed homepage (https).
+  * Fixed typo in description.
+  * d/rules: Changed UPSTREAM_GIT protocol to https
+  * d/copyright: Changed source URL to https protocol
+
+  [ Daniel Baumann ]
+  * Updating vcs fields.
+  * Updating copyright format url.
+  * Updating maintainer field.
+  * Running wrap-and-sort -bast.
+  * Removing gbp.conf, not used anymore or should be specified in the
+    developers dotfiles.
+
+  [ Thomas Goirand ]
+  * Removed inactive uploaders.
+  * Add missin dh-python build-depends.
+  * Removed now useless version of (build-)depends.
+  * Standards-Version is now 4.1.3.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 02 Apr 2018 17:41:44 +0200
+
+python-sure (1.2.5-4) unstable; urgency=medium
+
+  * Fixed typo in package description (Closes: #782528).
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 12 May 2015 23:28:12 +0200
+
+python-sure (1.2.5-3) unstable; urgency=medium
+
+  * Fixed "bug in callable assertions when called with parameters", thanks to
+    Edward Betts <edward@4angle.com> for reporting (Closes: #766477).
+  * Standards-Version is now 3.9.6 (no change).
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 25 Oct 2014 08:00:16 +0000
+
+python-sure (1.2.5-2) unstable; urgency=medium
+
+  * Fixed unfinished first sentence of GPL3 license in debian/copyright, thanks
+    to Thorsten Alteholz <alteholz@debian.org> for reporting. (Closes: #744757)
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 16 Apr 2014 12:21:18 +0800
+
+python-sure (1.2.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Added python-rednose (build-)dependency.
+  * Added Python3 (and 3.2) support to the package, thanks to Cyril Roelandt.
+  * Removes the use of embedded copy of six.py.
+  * Standards-Version is now 3.9.5.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 03 Apr 2014 00:33:28 +0800
+
+python-sure (1.2.2-2) unstable; urgency=low
+
+  * Drops dependency on python-steadymark (Closes: #722507).
+  * Drops build-dependency on openstack-pkg-tools (and make it optional in
+    debian/rules).
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 04 Dec 2013 16:51:23 +0800
+
+python-sure (1.2.2-1) unstable; urgency=low
+
+  * Initial release. (Closes: #721710)
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 03 Sep 2013 19:26:12 +0800
