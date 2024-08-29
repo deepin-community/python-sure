@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # <sure - utility belt for automated testing in python>
-# Copyright (C) <2010-2021>  Gabriel Falcão <gabriel@nacaolivre.org>
+# Copyright (C) <2010-2023>  Gabriel Falcão <gabriel@nacaolivre.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -99,6 +99,7 @@ if __name__ == "__main__":
         include_package_data=True,
         packages=find_packages(exclude=["*tests*"]),
         install_requires=install_requires,
+        long_description_content_type='text/x-rst',
         entry_points={
             "console_scripts": ["sure = sure.cli:entrypoint"],
         },
@@ -112,13 +113,13 @@ if __name__ == "__main__":
             "Operating System :: POSIX",
             "Operating System :: POSIX :: Linux",
             "Programming Language :: Python",
-            "Programming Language :: Python :: 2",
-            "Programming Language :: Python :: 2.7",
             "Programming Language :: Python :: 3",
-            "Programming Language :: Python :: 3.4",
-            "Programming Language :: Python :: 3.5",
             "Programming Language :: Python :: 3.6",
             "Programming Language :: Python :: 3.7",
+            "Programming Language :: Python :: 3.8",
+            "Programming Language :: Python :: 3.9",
+            "Programming Language :: Python :: 3.10",
+            "Programming Language :: Python :: 3.11",
             "Programming Language :: Python :: Implementation",
             "Programming Language :: Python :: Implementation :: CPython",
             "Programming Language :: Python :: Implementation :: PyPy",

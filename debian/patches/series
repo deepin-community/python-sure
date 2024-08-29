@@ -1,0 +1,5 @@
+python3.12.diff
+#disable-test.diff
+remove-mock-depends.patch
+fix-tox.ini.patch
+switch-from-nose-to-pytest-and-unittest.patch

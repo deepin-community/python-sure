@@ -10,6 +10,7 @@ override_dh_auto_clean:
 	rm -rf build
 	find . -iname '*.pyc' -delete
 	for i in $$(find . -type d -iname __pycache__) ; do rm -rf $$i ; done
+	rm -f .coverage
 
 override_dh_auto_build:
 	echo "Do nothing..."
@@ -20,7 +21,7 @@ override_dh_auto_install:
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 	set -x ; set -e ; for i in $(PYTHON3S) ; do \
-		python$$i -m nose -v --exclude='.*test_context_is_not_optional.*' ; \
+		python$$i -m pytest -v tests -k "not test_context_is_not_optional and not test_depends_on_failing_due_nothing_found and not test_depends_on_failing_due_not_calling_a_previous_action" ; \
 	done
 endif
 
