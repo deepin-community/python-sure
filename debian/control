@@ -9,9 +9,8 @@ Build-Depends:
  dh-python,
  openstack-pkg-tools,
  python3-all,
- python3-mock,
- python3-nose,
- python3-rednose,
+ python3-pytest,
+ python3-pytest-cov,
  python3-setuptools,
  python3-six,
 Standards-Version: 4.1.3
@@ -22,8 +21,6 @@ Homepage: https://github.com/gabrielfalcao/sure
 Package: python3-sure
 Architecture: all
 Depends:
- python3-nose,
- python3-rednose,
  python3-six,
  ${misc:Depends},
  ${python3:Depends},

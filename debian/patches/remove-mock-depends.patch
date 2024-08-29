@@ -1,0 +1,45 @@
+Description: Remove mock depends
+Author: Thomas Goirand <zigo@debian.org>
+Bug-Debian: https://bugs.debian.org/1060095
+Forwarded: no
+Last-Update: 2024-02-19
+
+Index: python-sure/sure/core.py
+===================================================================
+--- python-sure.orig/sure/core.py
++++ python-sure/sure/core.py
+@@ -19,7 +19,7 @@ from __future__ import unicode_literals
+ import os
+ 
+ try:
+-    from mock import _CallList
++    from unittest.mock import _CallList
+ except ImportError:
+     from mock.mock import _CallList
+ 
+Index: python-sure/tests/test_assertion_builder.py
+===================================================================
+--- python-sure.orig/tests/test_assertion_builder.py
++++ python-sure/tests/test_assertion_builder.py
+@@ -17,7 +17,7 @@
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ from __future__ import unicode_literals
+ import re
+-import mock
++from unittest import mock
+ from collections import OrderedDict
+ 
+ from datetime import datetime, timedelta
+Index: python-sure/setup.py
+===================================================================
+--- python-sure.orig/setup.py
++++ python-sure/setup.py
+@@ -81,7 +81,7 @@ def read_readme():
+         return __doc__
+ 
+ 
+-install_requires = ["mock", "six"]
++install_requires = ["six"]
+ tests_require = ["nose"]
+ version = read_version()
+ 

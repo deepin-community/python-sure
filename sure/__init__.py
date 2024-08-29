@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # <sure - utility belt for automated testing in python>
-# Copyright (C) <2010-2021>  Gabriel Falcão <gabriel@nacaolivre.org>
+# Copyright (C) <2010-2023>  Gabriel Falcão <gabriel@nacaolivre.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -127,9 +127,8 @@ class CallBack(object):
             err = err.replace("{0}:".format(exc_klass.__name__), "").strip()
 
             if err.startswith(self.callback_name) and (
-                "takes no arguments (1 given)" in err
-                or "takes 0 positional arguments but 1 was given" in err
-            ):
+                "takes no arguments (1 given)" in err) or \
+                "takes 0 positional arguments but 1 was given" in err:
                 raise TypeError(
                     self.context_error
                     % (
